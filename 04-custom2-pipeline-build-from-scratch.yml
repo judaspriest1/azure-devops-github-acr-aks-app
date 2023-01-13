@@ -8,9 +8,6 @@
 trigger:
 - master
 
-#Variables
-variables:
-  tag: '$(Build.BuildId)'
 stages:
 # Build Stage 
 - stage: Build
@@ -28,9 +25,7 @@ stages:
         repository: 'custom2aksnginxapp1'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-        tags: 
-         $(tag)
-         $(Build.SourceVersion)
+
 ## Publish Artifacts pipeline code in addition to Build and Push          
     - bash: echo Contents in System Default Working Directory; ls -R $(System.DefaultWorkingDirectory)        
     - bash: echo Before copying Contents in Build Artifact Directory; ls -R $(Build.ArtifactStagingDirectory)        
