@@ -48,7 +48,7 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     pool:
-      vmImage: $(vmImageName)
+        name: 'Default'
     environment: 'judaspriest1azuredevopsgithubacraksapp.default'
     strategy:
       runOnce:
